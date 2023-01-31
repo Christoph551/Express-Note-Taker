@@ -21,7 +21,8 @@ To use this program, start by cloning this repository. From there, navigate to t
 
 ## Deployment
 
-N/A
+![Screenshot](./Images/localhost_3001_notes.png)
+- To be deployed through Heroku.
 
 ## Usage
 

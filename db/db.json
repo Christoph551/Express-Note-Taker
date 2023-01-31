@@ -1,26 +1,17 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
-    },
-    {
-        "title": "Test",
-        "text": "TEst",
-        "uuid": "0a2f"
-    },
-    {
-        "title": "New Test",
-        "text": "New Test",
-        "id": "896c"
-    },
-    {
         "title": "Hello World",
-        "text": "Test",
-        "id": "97bf"
+        "text": "Lorem Ipsum",
+        "id": "5bcf"
     },
     {
-        "title": "Test",
-        "text": "Hello",
-        "id": "23cf"
+        "title": "Note #2",
+        "text": "Lorem Ipsum",
+        "id": "347b"
+    },
+    {
+        "title": "Note #3",
+        "text": "Lorem Ipsum",
+        "id": "b1c4"
     }
 ]

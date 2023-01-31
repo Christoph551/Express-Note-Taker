@@ -27,13 +27,17 @@ app.post('/notes', (req, res) => {
     }
 });
 
-app.delete('/api/notes/:id', (req, res) => {
+app.delete('/notes/:id', (req, res) => {
     console.info(`${req.method} request received to delete note.`)
     console.log(req.body, req.params)
-    const deleteArray = JSON.parse(res)
-    const readAndUpdateData = fs.readFileSync('./notes', 'utf8');
-    const parsedData = JSON.parse(readAndUpdateData);
-    parsedData.push(deleteArray)
+    fs.readFile(`./db/db.json`, `utf8`, (err, data) => {
+        const myArray = JSON.parse(data);
+        const delId = req.params.id;
+        const delData = myArray.filter(data => data.id !== delId)
+
+        writeToFile(`./db/db.json`, delData)
+        res.json(`Removed note.`)
+    });
 });
 
 module.exports = app;
