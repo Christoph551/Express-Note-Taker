@@ -1,6 +1,7 @@
 const app = require('express').Router();
 const { readFromFile, writeToFile, readAndAppend } = require('../helpers/fsUtils');
-const uniqid = require('uniqid');
+const fs = require('fs');
+const uuid = require('../helpers/uuid');
 
 // GET Route for notes page
 app.get('/notes', (req, res) => {
@@ -10,13 +11,13 @@ app.get('/notes', (req, res) => {
 app.post('/notes', (req, res) => {
     console.info(`${req.method} request received to add a note.`)
 
-    const { title, text, uniqid} = req.body;
+    const { title, text } = req.body;
 
     if (req.body) {
         const addNote = {
             title,
             text,
-            uniqid: uuid(),
+            id: uuid(),
         };
 
     readAndAppend(addNote, './db/db.json');
@@ -26,23 +27,13 @@ app.post('/notes', (req, res) => {
     }
 });
 
-app.delete('/notes', (req, res) => {
+app.delete('/api/notes/:id', (req, res) => {
     console.info(`${req.method} request received to delete note.`)
-
-    const { title, text, uniqid } = req.body;
-
-    if (req.body) {
-        const deleteNote = {
-            title,
-            text,
-            uniqid: uuid(),
-        };
-
-    writeToFile(deleteNote, './db/db.json');
-    res.json(`Note deleted successfully!`);
-    } else {
-    res.error(`Error in deleting a note.`)
-    }
+    console.log(req.body, req.params)
+    const deleteArray = JSON.parse(res)
+    const readAndUpdateData = fs.readFileSync('./notes', 'utf8');
+    const parsedData = JSON.parse(readAndUpdateData);
+    parsedData.push(deleteArray)
 });
 
 module.exports = app;
