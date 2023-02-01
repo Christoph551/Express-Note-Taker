@@ -21,8 +21,9 @@ To use this program, start by cloning this repository. From there, navigate to t
 
 ## Deployment
 
+A link to the deployed application can be found [here](https://serene-fortress-18066.herokuapp.com/)
+
 ![Screenshot](./Images/localhost_3001_notes.png)
-- To be deployed through Heroku.
 
 ## Usage
 
@@ -35,6 +36,7 @@ Source Code used for this project was pulled from [Xandromus](https://github.com
 - [Joshua Minor](https://github.com/jminor90)
 - [Anthony Frederick](https://github.com/AnthonyFrederick7) 
 - [Adam Hovda](https://github.com/adamhovda)
+- [Logan Peterson](https://github.com/codeDevLogan)
 
 ## Test
 
